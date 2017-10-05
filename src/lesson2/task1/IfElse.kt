@@ -34,7 +34,7 @@ fun minBiRoot(a: Double, b: Double, c: Double): Double {
  * вернуть строку вида: «21 год», «32 года», «12 лет».
  */
 fun ageDescription(age: Int): String {
-    if ((age>0)&&(age<200) &&((age%10==1)||((age%100)%10==1))&&(age!=11)&&(age!=111))
+    if ((age>0)&&(age<200)&&((age%10==1)||((age%100)%10==1))&&(age!=11)&&(age!=111))
         return ("$age год")
     else if ((age>0)&&(age<100)&&((age%10==2)||(age%10==3)||(age%10==4))&&(age!=11)&&(age!=12)&&(age!=13)&&(age!=14))
         return ("$age года")
@@ -55,7 +55,7 @@ fun timeForHalfWay(t1: Double, v1: Double,
                    t3: Double, v3: Double): Double {
     val halfs=(t1*v1+t2*v2+t3*v3)/2
     if (t1*v1>=halfs) return halfs/v1
-    else if (t1*v1+t2*v2>=halfs) return t1+ (halfs-t1*v1)/v2
+    else if (t1*v1+t2*v2>=halfs) return t1+(halfs-t1*v1)/v2
     else return t1+t2+(halfs-t1*v1-t2*v2)/v3
 }
 
@@ -72,7 +72,7 @@ fun whichRookThreatens(kingX: Int, kingY: Int,
                        rookX1: Int, rookY1: Int,
                        rookX2: Int, rookY2: Int): Int {
     if ((kingX!=rookX2)&&(kingY!=rookY2)&&(((kingX==rookX1)&&(kingY!=rookY1))||((kingX!=rookX1)&&(kingY==rookY1)))) return 1
-    else if ((kingX!=rookX1)&&(kingY!=rookY1) &&(((kingX==rookX2)&&(kingY!=rookY2))||((kingX!=rookX2)&&(kingY==rookY2)))) return 2
+    else if ((kingX!=rookX1)&&(kingY!=rookY1)&&(((kingX==rookX2)&&(kingY!=rookY2))||((kingX!=rookX2)&&(kingY==rookY2)))) return 2
     else if ((kingX!=rookX1)&&(kingY!=rookY1)&&(kingX!=rookX2)&&(kingY!=rookY2)) return 0
     else return 3
     }
@@ -93,7 +93,7 @@ fun rookOrBishopThreatens(kingX: Int, kingY: Int,
                           rookX: Int, rookY: Int,
                           bishopX: Int, bishopY: Int): Int {
     if ((kingX!=rookX)&&(kingY!=rookY)&&((kingX+kingY)!=(bishopX+bishopY))&&((kingX-kingY)!=(bishopX-bishopY))) return 0
-    else if (((kingX==rookX)||(kingY==rookY)) &&((kingX+kingY)!=(bishopX+bishopY))&&((kingX-kingY)!=(bishopX-bishopY))) return 1
+    else if (((kingX==rookX)||(kingY==rookY))&&((kingX+kingY)!=(bishopX+bishopY))&&((kingX-kingY)!=(bishopX-bishopY))) return 1
     else if ((kingX!=rookX)&&(kingY!=rookY)&&((kingX+kingY)==(bishopX+bishopY))||((kingX-kingY)==(bishopX-bishopY))) return 2
     else return 3
 }
@@ -108,7 +108,7 @@ fun rookOrBishopThreatens(kingX: Int, kingY: Int,
  */
 fun triangleKind(a: Double, b: Double, c: Double): Int {
     if ((a>=b+c)||(b>=a+c)||(c>=a+b)) return -1
-    else if ((a<=b+c)&&(b<=a+c) &&(c<=a+b)) return 0
+    else if ((a<=b+c)&&(b<=a+c)&&(c<=a+b)) return 0
     else if ((a==b+c)||(b==a+c)||(c==a+b)) return 1
     else return 2
 }
@@ -123,7 +123,7 @@ fun triangleKind(a: Double, b: Double, c: Double): Int {
  */
 fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int {
     if ((d>=b)&&(c>=a)&&(b>=c)) return b-c
-    else if ((a<=c)&&(c<=b) &&(d<=b)) return d-c
+    else if ((a<=c)&&(c<=b)&&(d<=b)) return d-c
     else if ((a>=c)&&(b<=d)) return b-a
     else if ((a>=c)&&(d>=a)&&(b>=d)) return d-a
     else return -1
