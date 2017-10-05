@@ -65,7 +65,7 @@ fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean {
     val x1=Math.min(c,(Math.min(a, b)))
     val y1=Math.max(c,(Math.max(a, b)))
     val h1=a+b+c-x1-y1
-    val h2= Math.max(s,r)
-    val x2= Math.min(s,r)
+    val h2=Math.max(s,r)
+    val x2=Math.min(s,r)
     return x1<=x2&&h1<=h2
 }
