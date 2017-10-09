@@ -22,8 +22,7 @@ fun isNumberHappy(number: Int): Boolean {
     val x2=number/1000
     val x3=(number/100)%10
     val x4=(number/10)%10
-    if (x2+x3==x1+x4) return true
-    else return false
+    return (x2+x3==x1+x4)
 }
 
 /**
@@ -34,8 +33,7 @@ fun isNumberHappy(number: Int): Boolean {
  * Считать, что ферзи не могут загораживать друг друга.
  */
 fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
-    if ((x1==x2)||(y1==y2)||((x1+y1)==(x2+y2))||((x1-y1)==(x2-y2))) return true
-    else return false
+    return ((x1==x2)||(y1==y2)||((x1+y1)==(x2+y2))||((x1-y1)==(x2-y2)))
 }
 
 /**
@@ -48,8 +46,7 @@ fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
 fun circleInside(x1: Double, y1: Double, r1: Double,
                  x2: Double, y2: Double, r2: Double): Boolean {
     val l=Math.sqrt(sqr(x2-x1)+sqr(y2-y1))
-    if ((l+r1)>r2) return false
-    else return true
+    return ((l+r1)>r2)
 }
 
 /**
