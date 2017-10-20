@@ -35,13 +35,13 @@ fun minBiRoot(a: Double, b: Double, c: Double): Double {
  */
 fun ageDescription(age: Int): String {
     return when {
-        ((age>0)&&(age<200)&&((age%10==1)||((age%100)%10==1))&&(age!=11)&&(age!=111))
+        (age>0)&&(age<200)&&((age%10==1)||((age%100)%10==1))&&(age!=11)&&(age!=111)
             -> ("$age год")
-        ((age>0)&&(age<100)&&((age%10==2)||(age%10==3)||(age%10==4))
-                &&(age!=11)&&(age!=12)&&(age!=13)&&(age!=14))
+        (age>0)&&(age<100)&&((age%10==2)||(age%10==3)||(age%10==4))
+                &&(age!=11)&&(age!=12)&&(age!=13)&&(age!=14)
             -> ("$age года")
-        ((age>99)&&(age<200)&&(((age%100)%10==2)||((age%100)%10==3)
-                ||((age%100)%10==4))&&(age!=111)&&(age!=112)&&(age!=113)&&(age!=114))
+        (age>99)&&(age<200)&&(((age%100)%10==2)||((age%100)%10==3)
+                ||((age%100)%10==4))&&(age!=111)&&(age!=112)&&(age!=113)&&(age!=114)
             -> ("$age года")
         else -> ("$age лет")
     }
@@ -59,8 +59,8 @@ fun timeForHalfWay(t1: Double, v1: Double,
                    t3: Double, v3: Double): Double {
     val halfs=(t1*v1+t2*v2+t3*v3)/2
     return when {
-        (t1*v1>=halfs) -> halfs/v1
-        (t1*v1+t2*v2>=halfs) -> t1+(halfs-t1*v1)/v2
+        t1*v1>=halfs -> halfs/v1
+        t1*v1+t2*v2>=halfs -> t1+(halfs-t1*v1)/v2
         else -> t1+t2+(halfs-t1*v1-t2*v2)/v3
     }
 }
