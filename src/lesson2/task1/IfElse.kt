@@ -104,11 +104,11 @@ fun rookOrBishopThreatens(kingX: Int, kingY: Int,
                           rookX: Int, rookY: Int,
                           bishopX: Int, bishopY: Int): Int {
     return when {
-        (((kingX==rookX)||(kingY==rookY))&&(((kingX-kingY)==(bishopX-bishopY))
-                ||((kingX+kingY)==(bishopX+bishopY)))) -> 3
-        ((kingX==rookX)||(kingY==rookY)) -> 1
-        (((kingX-kingY)==(bishopX-bishopY))
-                ||((kingX+kingY)==(bishopX+bishopY))) -> 2
+        ((kingX==rookX)||(kingY==rookY))&&(((kingX-kingY)==(bishopX-bishopY))
+                ||((kingX+kingY)==(bishopX+bishopY))) -> 3
+        (kingX==rookX)||(kingY==rookY) -> 1
+        ((kingX-kingY)==(bishopX-bishopY))
+                ||((kingX+kingY)==(bishopX+bishopY)) -> 2
         else -> 0
     }
 }
@@ -123,9 +123,9 @@ fun rookOrBishopThreatens(kingX: Int, kingY: Int,
  */
 fun triangleKind(a: Double, b: Double, c: Double): Int {
     return when {
-        ((a>=b+c)||(b>=a+c)||(c>=a+b)) -> -1
-        ((a*a<b*b+c*c)&&(b*b<a*a+c*c)&&(c*c<a*a+b*b)) -> 0
-        ((a*a==b*b+c*c)||(b*b==a*a+c*c)||(c*c==a*a+b*b)) -> 1
+        (a>=b+c)||(b>=a+c)||(c>=a+b) -> -1
+        (a*a<b*b+c*c)&&(b*b<a*a+c*c)&&(c*c<a*a+b*b) -> 0
+        (a*a==b*b+c*c)||(b*b==a*a+c*c)||(c*c==a*a+b*b) -> 1
         else -> 2
     }
 
@@ -141,10 +141,10 @@ fun triangleKind(a: Double, b: Double, c: Double): Int {
  */
 fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int {
     return when{
-        ((d>=b)&&(c>=a)&&(b>=c)) -> b-c
-        ((a<=c)&&(c<=b)&&(d<=b)) -> d-c
-        ((a>=c)&&(b<=d)) -> b-a
-        ((a>=c)&&(d>=a)&&(b>=d)) -> d-a
+        (d>=b)&&(c>=a)&&(b>=c) -> b-c
+        (a<=c)&&(c<=b)&&(d<=b) -> d-c
+        (a>=c)&&(b<=d) -> b-a
+        (a>=c)&&(d>=a)&&(b>=d) -> d-a
         else -> -1
     }
 
