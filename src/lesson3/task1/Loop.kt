@@ -123,7 +123,7 @@ fun maxDivisor(n: Int): Int {
        when {
             (n%k==0) -> return k
        }
-    }
+   }
     return 1
 }
 
