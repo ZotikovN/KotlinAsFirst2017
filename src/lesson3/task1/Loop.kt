@@ -242,9 +242,9 @@ fun squareSequenceDigit(n: Int): Int {
                 }
                 count==n -> num==k%10
             }
-            return num
         }
     }
+    return num
 }
 
 /**
@@ -289,7 +289,7 @@ fun fibSequenceDigit(n: Int): Int {
                 }
                 count==n -> num==f%10
             }
-            return num
         }
     }
+    return num
 }
