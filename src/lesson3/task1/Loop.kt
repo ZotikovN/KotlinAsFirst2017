@@ -79,8 +79,20 @@ fun digitNumber(n: Int): Int {
  * Ряд Фибоначчи определён следующим образом: fib(1) = 1, fib(2) = 1, fib(n+2) = fib(n) + fib(n+1)
  */
 fun fib(n: Int): Int {
-    if (n<=2) return 1
-    else return fib(n-2)+fib(n-1)
+    var no1: Int = 1
+    var no2: Int = 1
+    var fib: Int = 0
+    var m: Int = 2
+    if (n<=m) return 1
+    else {
+        while (n > m){
+            fib = no1 + no2
+            no1 = no2
+            no2 = fib
+            m +=1
+        }
+        return fib
+    }
 }
 
 /**
