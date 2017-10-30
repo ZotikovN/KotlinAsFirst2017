@@ -281,6 +281,6 @@ fun fibSequenceDigit(n: Int): Int {
                 f /= 10
             } while (difcount > 0)
         }
-        return num
     }
+    return num
 }
