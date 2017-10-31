@@ -225,7 +225,7 @@ fun squareSequenceDigit(n: Int): Int {
     var k: Int = 0
     var m: Int = 0
     var count: Int = 0
-    var nc: Int = 0
+    var ncount: Int = 0
     var num: Int = 0
     var dc: Int = 0
     if (n == 1) return 1
@@ -235,13 +235,13 @@ fun squareSequenceDigit(n: Int): Int {
             m = k
             while (m > 0) {
                 m /= 10
-                nc += 1
+                ncount += 1
             }
-            count += nc
-            nc = 0
+            count = count + ncount
+            ncount = 0
             no += 1
         }
-        if (count==n) num == k%10
+        if (count==n) num = k % 10
         else {
             dc = count - n
             while (dc > 0) {
@@ -267,9 +267,9 @@ fun fibSequenceDigit(n: Int): Int {
     var f: Int = 0
     var m: Int = 0
     var count: Int = 2
-    var nc: Int = 0
+    var ncount: Int = 0
     var num: Int = 0
-    var dc: Int = 0
+    var difcount: Int = 0
     if ((n == 2)||(n == 1)) return 1
     else {
         while (count < n) {
@@ -277,18 +277,18 @@ fun fibSequenceDigit(n: Int): Int {
             m = f
             while (m > 0) {
                 m /= 10
-                nc += 1
+                ncount += 1
             }
-            count += nc
-            nc = 0
+            count = count + ncount
+            ncount = 0
             no1 = no2
             no2 = f
         }
-        if (count == n) num == f % 10
+        if (count == n) num = f % 10
         else {
-            dc = count - n
-            while (dc > 0) {
-                dc -= 1
+            difcount = count - n
+            while (difcount > 0) {
+                difcount -= 1
                 f /= 10
             }
             num = f % 10
