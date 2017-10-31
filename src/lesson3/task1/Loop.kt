@@ -229,26 +229,29 @@ fun squareSequenceDigit(n: Int): Int {
     var ncount: Int = 0
     var num: Int = 0
     var difcount: Int = 0
-    if (n == 1) return 1
-    else {
-        while (count < n) {
-            k = no * no
-            m = k
-            while (m > 0) {
-                m /= 10
-                ncount += 1
+    when {
+        n == 1 -> return 1
+        else -> {
+            while (count < n) {
+                k = no * no
+                m = k
+                while (m > 0) {
+                    m /= 10
+                    ncount += 1
+                }
+                count = count + ncount
+                ncount = 0
+                no += 1
             }
-            count = count + ncount
-            ncount = 0
-            no += 1
-        }
-        if (count==n) num==k%10
-        else {
-            difcount = count - n
-            do {
-                difcount -= 1
-                k /= 10
-            } while (difcount > 0)
+            if (count==n) num==k%10
+            else {
+                difcount = count - n
+                do {
+                    difcount -= 1
+                    k /= 10
+                } while (difcount > 0)
+                num = k % 10
+            }
         }
     }
     return num
@@ -271,27 +274,30 @@ fun fibSequenceDigit(n: Int): Int {
     var ncount: Int = 0
     var num: Int = 0
     var difcount: Int = 0
-    if (n == 1) return 1
-    else {
-        while (count < n) {
-            f = no1 + no2
-            m = f
-            while (m > 0) {
-                m /= 10
-                ncount += 1
+    when {
+        n == 1 -> return 1
+        else -> {
+            while (count < n) {
+                f = no1 + no2
+                m = f
+                while (m > 0) {
+                    m /= 10
+                    ncount += 1
+                }
+                count = count + ncount
+                ncount = 0
+                no1 = no2
+                no2 = f
             }
-            count = count + ncount
-            ncount = 0
-            no1 = no2
-            no2 = f
-        }
-        if (count == n) num == f % 10
-        else {
-            difcount = count - n
-            do {
-                difcount -= 1
-                f /= 10
-            } while (difcount > 0)
+            if (count == n) num == f % 10
+            else {
+                difcount = count - n
+                do {
+                    difcount -= 1
+                    f /= 10
+                } while (difcount > 0)
+                num = f % 10
+            }
         }
     }
     return num
