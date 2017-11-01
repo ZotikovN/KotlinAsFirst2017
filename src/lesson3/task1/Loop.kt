@@ -205,11 +205,11 @@ fun revert(n: Int): Int {
         x /= 10
     } while (x>0)
     x = n
-    z = ind
-    for (i in 1..z) {
-        s = Math.pow(10.0,(ind).toDouble()).toInt() * (x % 10)
+    z = ind - 1
+    for (i in 1..ind) {
+        s = Math.pow(10.0,(z).toDouble()).toInt() * (x % 10)
         x /= 10
-        ind -= 1
+        z -= 1
         num += s
     }
     return num
