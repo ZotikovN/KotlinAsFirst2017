@@ -223,8 +223,8 @@ fun decimalFromString(str: String, base: Int): Int = TODO()
 fun roman(n: Int): String {
     var n1 = n
     var num = ""
-    val greek = listOf(1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000)
-    val roman = listOf("I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M")
+    val roman = listOf("M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I")
+    val greek = listOf(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
     for (i in 0 until greek.size) {
         while (greek[i]<=n1) {
             n1 -= greek[i]
