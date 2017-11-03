@@ -102,12 +102,17 @@ fun fib(n: Int): Int {
  * минимальное число k, которое делится и на m и на n без остатка
  */
 fun lcm(m: Int, n: Int): Int {
-    var k=1
-    while (k<=n*m) {
-        if ((k%n==0)&&(k%m==0)) break
-        else k+=1
+    var nk = n
+    var mk = m
+    var ans: Int = 0
+    while (nk!=mk) {
+        when {
+            nk<mk -> mk-=nk
+            else -> nk-=mk
+        }
     }
-    return k
+    ans=m*n/mk
+    return ans
 }
 /**
  * Простая
@@ -165,7 +170,8 @@ fun squareBetweenExists(m: Int, n: Int): Boolean {
         m == 0 -> return true
         else -> {
             while (k<=n/k) {
-                if (k>=m/k) return true
+                if ((k.toDouble()>=m.toDouble()/k.toDouble()) &&
+                        (k.toDouble()<=n.toDouble()/k.toDouble())) return true
                 k+=1
             }
         }
