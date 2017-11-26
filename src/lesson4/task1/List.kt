@@ -171,7 +171,7 @@ fun factorize(n: Int): List<Int> = TODO()
  * Разложить заданное натуральное число n > 1 на простые множители.
  * Результат разложения вернуть в виде строки, например 75 -> 3*5*5
  */
-fun factorizeToString(n: Int): String =
+fun factorizeToString(n: Int): String = TODO()
 
 /**
  * Средняя
@@ -190,9 +190,7 @@ fun convert(n: Int, base: Int): List<Int> = TODO()
  * строчными буквами: 10 -> a, 11 -> b, 12 -> c и так далее.
  * Например: n = 100, base = 4 -> 1210, n = 250, base = 14 -> 13c
  */
-fun convertToString(n: Int, base: Int): String {
-
-}
+fun convertToString(n: Int, base: Int): String = TODO()
 
 /**
  * Средняя
@@ -212,9 +210,7 @@ fun decimal(digits: List<Int>, base: Int): Int = TODO()
  * 10 -> a, 11 -> b, 12 -> c и так далее.
  * Например: str = "13c", base = 14 -> 250
  */
-fun decimalFromString(str: String, base: Int): Int {
-
-}
+fun decimalFromString(str: String, base: Int): Int = TODO()
 
 /**
  * Сложная
