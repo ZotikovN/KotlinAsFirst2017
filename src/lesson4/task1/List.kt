@@ -172,7 +172,6 @@ fun factorize(n: Int): List<Int> = TODO()
  * Результат разложения вернуть в виде строки, например 75 -> 3*5*5
  */
 fun factorizeToString(n: Int): String =
-        factorize(n).joinToString(separator = "*")
 
 /**
  * Средняя
@@ -192,14 +191,7 @@ fun convert(n: Int, base: Int): List<Int> = TODO()
  * Например: n = 100, base = 4 -> 1210, n = 250, base = 14 -> 13c
  */
 fun convertToString(n: Int, base: Int): String {
-    var conv = convert(n, base)
-    var sb = StringBuilder()
-    for (element in 0 until conv.size) {
-        when {
-            conv[element] > 9 -> sb.append('a' + conv[element] - 10)
-            else -> sb.append(conv[element])}
-    }
-    return sb.toString()
+
 }
 
 /**
@@ -221,16 +213,7 @@ fun decimal(digits: List<Int>, base: Int): Int = TODO()
  * Например: str = "13c", base = 14 -> 250
  */
 fun decimalFromString(str: String, base: Int): Int {
-    var a = mutableListOf<Int>()
-    for (i in 0 until str.length)
-        when {
-            str[i] >= 'a' ->
-            {
-                a.add(str[i] - 'a' + 10)
-            }
-            else -> a.add(str[i] - '0')
-        }
-    return decimal(a, base)
+
 }
 
 /**
