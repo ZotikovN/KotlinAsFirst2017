@@ -104,15 +104,13 @@ fun fib(n: Int): Int {
 fun lcm(m: Int, n: Int): Int {
     var nk = n
     var mk = m
-    var ans: Int = 0
     while (nk!=mk) {
         when {
             nk<mk -> mk-=nk
             else -> nk-=mk
         }
     }
-    ans=m*n/mk
-    return ans
+    return m*n/mk
 }
 /**
  * Простая
@@ -256,28 +254,25 @@ fun squareSequenceDigit(n: Int): Int {
     var ncount: Int = 0
     var num: Int = 0
     var dc: Int = 0
-    if (n == 1) return 1
+    while (count < n) {
+        k = no * no
+        m = k
+        while (m > 0) {
+            m /= 10
+            ncount += 1
+        }
+        count = count + ncount
+        ncount = 0
+        no += 1
+    }
+    if (count==n) num = k % 10
     else {
-        while (count < n) {
-            k = no * no
-            m = k
-            while (m > 0) {
-                m /= 10
-                ncount += 1
-            }
-            count = count + ncount
-            ncount = 0
-            no += 1
+        dc = count - n
+        while (dc > 0) {
+            dc -= 1
+            k /= 10
         }
-        if (count==n) num = k % 10
-        else {
-            dc = count - n
-            while (dc > 0) {
-                dc -= 1
-                k /= 10
-            }
-            num = k % 10
-        }
+        num = k % 10
     }
     return num
 }

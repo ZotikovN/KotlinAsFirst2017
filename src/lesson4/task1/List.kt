@@ -171,7 +171,7 @@ fun factorize(n: Int): List<Int> = TODO()
  * Разложить заданное натуральное число n > 1 на простые множители.
  * Результат разложения вернуть в виде строки, например 75 -> 3*5*5
  */
-fun factorizeToString(n: Int): String = TODO()
+fun factorizeToString(n: Int): String = factorize(n).joinToString(separator = "*")
 
 /**
  * Средняя
@@ -190,7 +190,16 @@ fun convert(n: Int, base: Int): List<Int> = TODO()
  * строчными буквами: 10 -> a, 11 -> b, 12 -> c и так далее.
  * Например: n = 100, base = 4 -> 1210, n = 250, base = 14 -> 13c
  */
-fun convertToString(n: Int, base: Int): String = TODO()
+fun convertToString(n: Int, base: Int): String {
+    var conv = convert(n, base)
+    var sb = StringBuilder()
+    for (element in 0 until conv.size) {
+        when {
+            conv[element] > 9 -> sb.append('a' + conv[element] - 10)
+            else -> sb.append(conv[element])}
+    }
+    return sb.toString()
+}
 
 /**
  * Средняя
@@ -210,7 +219,18 @@ fun decimal(digits: List<Int>, base: Int): Int = TODO()
  * 10 -> a, 11 -> b, 12 -> c и так далее.
  * Например: str = "13c", base = 14 -> 250
  */
-fun decimalFromString(str: String, base: Int): Int = TODO()
+fun decimalFromString(str: String, base: Int): Int {
+    var a = mutableListOf<Int>()
+    for (i in 0 until str.length)
+        when {
+            str[i] >= 'a' ->
+            {
+                a.add(str[i] - 'a' + 10)
+            }
+            else -> a.add(str[i] - '0')
+        }
+    return decimal(a, base)
+}
 
 /**
  * Сложная
@@ -222,16 +242,16 @@ fun decimalFromString(str: String, base: Int): Int = TODO()
  */
 fun roman(n: Int): String {
     var n1 = n
-    var num = ""
+    var str = ""
     val roman = listOf("M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I")
-    val greek = listOf(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
-    for (i in 0 until greek.size) {
-        while (greek[i]<=n1) {
-            n1 -= greek[i]
-            num += roman[i]
+    val arb = listOf(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
+    for (i in 0 until arb.size) {
+        while (arb[i]<=n1) {
+            n1 -= arb[i]
+            str += roman[i]
         }
     }
-    return num
+    return str
 }
 
 /**
