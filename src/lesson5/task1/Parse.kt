@@ -135,7 +135,16 @@ fun plusMinus(expression: String): Int = TODO()
  * Вернуть индекс начала первого повторяющегося слова, или -1, если повторов нет.
  * Пример: "Он пошёл в в школу" => результат 9 (индекс первого 'в')
  */
-fun firstDuplicateIndex(str: String): Int = TODO()
+fun firstDuplicateIndex(str: String): Int {
+    var length = 0
+    var list = str.toLowerCase().split(" ")
+    for (i in 0..(list.size - 1))
+    {
+        if ((list[i]) == list[i + 1]) return length + i
+        length = length + list[i].length
+    }
+    return -1
+}
 
 /**
  * Сложная
