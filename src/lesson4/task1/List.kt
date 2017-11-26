@@ -218,7 +218,16 @@ fun decimal(digits: List<Int>, base: Int): Int = TODO()
  * Например: str = "13c", base = 14 -> 250
  */
 fun decimalFromString(str: String, base: Int): Int {
-    var bla bla
+    var a = mutableListOf<Int>()
+    for (i in 0 until str.length)
+        when {
+            str[i] >= 'a' ->
+            {
+                a.add(str[i] - 'a' + 10)
+            }
+            else -> a.add(str[i] - '0')
+        }
+    return decimal(a, base)
 }
 
 /**
