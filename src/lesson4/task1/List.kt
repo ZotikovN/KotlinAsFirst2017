@@ -197,7 +197,16 @@ fun convert(n: Int, base: Int): List<Int> = TODO()
  * строчными буквами: 10 -> a, 11 -> b, 12 -> c и так далее.
  * Например: n = 100, base = 4 -> 1210, n = 250, base = 14 -> 13c
  */
-fun convertToString(n: Int, base: Int): String = TODO()
+fun convertToString(n: Int, base: Int): String {
+    var conv = convert(n, base)
+    var sb = StringBuilder()
+    for (element in 0 until conv.size) {
+        when {
+            conv[element] > 9 -> sb.append('a' + conv[element] - 10)
+            else -> sb.append(conv[element])}
+    }
+    return sb.toString()
+}
 
 /**
  * Средняя
