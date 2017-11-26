@@ -138,9 +138,11 @@ fun plusMinus(expression: String): Int = TODO()
 fun firstDuplicateIndex(str: String): Int {
     var length = 0
     var list = str.toLowerCase().split(" ")
-    for (i in 0..(list.size - 1))
+    for (i in 0 until list.size - 1)
     {
-        if ((list[i]) == list[i + 1]) return length + i
+        when {
+            ((list[i]) == list[i + 1]) -> return length + i
+        }
         length = length + list[i].length
     }
     return -1
