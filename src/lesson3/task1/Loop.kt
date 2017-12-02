@@ -110,7 +110,7 @@ fun lcm(m: Int, n: Int): Int {
             else -> nk-=mk
         }
     }
-    return m*n/mk
+    return (m/mk)*n
 }
 /**
  * Простая
@@ -119,10 +119,7 @@ fun lcm(m: Int, n: Int): Int {
  */
 fun minDivisor(n: Int): Int {
     var k=2
-    while (k<=n) {
-        if (n%k==0) break
-        else k+=1
-    }
+    while (n % k > 0) k+=1
     return k
 }
 
@@ -135,9 +132,7 @@ fun maxDivisor(n: Int): Int {
     var k=0
    for (i in n/2 downTo 1) {
        k=i
-       when {
-            (n%k==0) -> return k
-       }
+       if (n%k==0) return k
    }
     return 1
 }
