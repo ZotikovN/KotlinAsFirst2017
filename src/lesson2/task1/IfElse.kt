@@ -37,9 +37,9 @@ fun ageDescription(age: Int): String {
     val n1 = age % 10
     val n2 = age/10 % 10
     return when {
+        n2 == 1 -> "$age лет"
         n1 == 1 -> "$age год"
         n1 in 2..4 -> "$age года"
-        n2 == 1 -> "$age лет"
         else -> "$age лет"
     }
 }
