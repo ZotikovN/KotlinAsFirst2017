@@ -175,14 +175,11 @@ fun factorize(n: Int): List<Int> {
     var num = 2
     var nx = n
     while (nx >= num) {
-        (nx % num) == 0
-       when {
-           true -> {
-               x.add(num)
-               nx = nx/num
-           }
-           else -> num += 1
-       }
+        if ((nx % num) == 0) {
+            x.add(num)
+            nx = nx/num
+        }
+        else num += 1
     }
     return x.toList()
 }
