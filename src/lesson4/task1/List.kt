@@ -170,7 +170,22 @@ fun accumulate(list: MutableList<Double>): MutableList<Double> = TODO()
  * Результат разложения вернуть в виде списка множителей, например 75 -> (3, 5, 5).
  * Множители в списке должны располагаться по возрастанию.
  */
-fun factorize(n: Int): List<Int> = TODO()
+fun factorize(n: Int): List<Int> {
+    var x = mutableListOf<Int>()
+    var num = 2
+    var nx = n
+    while (nx >= num) {
+        (nx % num) == 0
+       when {
+           true -> {
+               x.add(num)
+               nx = nx/num
+           }
+           else -> num += 1
+       }
+    }
+    return x.toList()
+}
 
 /**
  * Сложная
