@@ -254,7 +254,7 @@ fun squareSequenceDigit(n: Int): Int {
     }
     t = count - n
     if (t != 0)
-        k = k/(Math.pow(10.0, t.toDouble())).toInt()
+        k = k / Math.pow(10.0, t.toDouble()).toInt()
     result = k % 10
     return result
 }
@@ -272,32 +272,17 @@ fun fibSequenceDigit(n: Int): Int {
     var f: Int = 0
     var m: Int = 0
     var count: Int = 2
-    var ncount: Int = 0
-    var num: Int = 0
-    var difcount: Int = 0
+    var result: Int = 0
     if ((n == 2)||(n == 1)) return 1
-    else {
-        while (count < n) {
-            f = no1 + no2
-            m = f
-            while (m > 0) {
-                m /= 10
-                ncount += 1
-            }
-            count = count + ncount
-            ncount = 0
-            no1 = no2
-            no2 = f
-        }
-        if (count == n) num = f % 10
-        else {
-            difcount = count - n
-            while (difcount > 0) {
-                difcount -= 1
-                f /= 10
-            }
-            num = f % 10
-        }
+    while (count < n) {
+        f = no1 + no2
+        count = count + digitNumber(f)
+        no1 = no2
+        no2 = f
     }
-    return num
+    m = count - n
+    if (m != 0)
+        f = f / Math.pow(10.0, m.toDouble()).toInt()
+    result = f % 10
+    return result
 }
