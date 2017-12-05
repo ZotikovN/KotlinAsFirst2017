@@ -244,32 +244,19 @@ fun hasDifferentDigits(n: Int): Boolean = TODO()
 fun squareSequenceDigit(n: Int): Int {
     var no: Int = 1
     var k: Int = 0
-    var m: Int = 0
+    var t: Int = 0
     var count: Int = 0
-    var ncount: Int = 0
-    var num: Int = 0
-    var dc: Int = 0
+    var result: Int = 0
     while (count < n) {
         k = no * no
-        m = k
-        while (m > 0) {
-            m /= 10
-            ncount += 1
-        }
-        count = count + ncount
-        ncount = 0
         no += 1
+        count = digitNumber(k) + count
     }
-    if (count==n) num = k % 10
-    else {
-        dc = count - n
-        while (dc > 0) {
-            dc -= 1
-            k /= 10
-        }
-        num = k % 10
-    }
-    return num
+    t = count - n
+    if (t != 0)
+        k = k/(Math.pow(10.0, t.toDouble())).toInt()
+    result = k % 10
+    return result
 }
 
 /**
