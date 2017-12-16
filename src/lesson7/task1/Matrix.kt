@@ -46,6 +46,7 @@ fun <E> createMatrix(height: Int, width: Int, e: E): Matrix<E> = TODO()
  * Реализация интерфейса "матрица"
  */
 class MatrixImpl<E>(override val height: Int, override val width: Int, e: E) : Matrix<E> {
+
     private val list = mutableListOf<E>()
 
     init {
