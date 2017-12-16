@@ -59,7 +59,7 @@ class MatrixImpl<E>(override val height: Int, override val width: Int, e: E) : M
 
     override fun get(row: Int, column: Int): E  = list[column + row * width]
 
-    override fun get(cell: Cell): E  = TODO()
+    override fun get(cell: Cell): E  = list[cell.column + cell.row * width]
 
     override fun set(row: Int, column: Int, value: E) {
         TODO()
@@ -69,7 +69,10 @@ class MatrixImpl<E>(override val height: Int, override val width: Int, e: E) : M
         TODO()
     }
 
-    override fun equals(other: Any?) = TODO()
+    override fun equals(other: Any?) =
+            other is MatrixImpl<*> &&
+            height == other.height &&
+            width == other.width
 
     override fun toString(): String = TODO()
 }
