@@ -2,6 +2,8 @@
 package lesson6.task1
 
 import lesson1.task1.sqr
+import lesson3.task1.cos
+import lesson3.task1.sin
 
 /**
  * Точка на плоскости
@@ -152,7 +154,14 @@ class Line private constructor(val b: Double, val angle: Double) {
      * Найти точку пересечения с другой линией.
      * Для этого необходимо составить и решить систему из двух уравнений (каждое для своей прямой)
      */
-    fun crossPoint(other: Line): Point = TODO()
+    fun crossPoint(other: Line): Point {
+        val y = ((Math.sin(other.angle) * b)
+                - (Math.sin(angle) * other.b)) / (Math.sin(other.angle - angle))
+        val x = ((Math.cos(angle) * other.b)
+                - (Math.cos(other.angle) * b)) / (Math.sin(angle - other.angle))
+        val ans = Point(x, y)
+        return ans
+    }
 
     override fun equals(other: Any?) = other is Line && angle == other.angle && b == other.b
 
