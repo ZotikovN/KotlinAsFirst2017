@@ -211,18 +211,12 @@ fun cos(x: Double, eps: Double): Double = TODO()
  * Не использовать строки при решении задачи.
  */
 fun revert(n: Int): Int {
-    var ind: Int = 0
     var x = n
     var s: Int = 0
     var num: Int = 0
     var z: Int = 0
-    do {
-        ind += 1
-        x /= 10
-    } while (x>0)
-    x = n
-    z = ind - 1
-    for (i in 1..ind) {
+    z = digitNumber(n) - 1
+    for (i in 1..digitNumber(n)) {
         s = Math.pow(10.0,(z).toDouble()).toInt() * (x % 10)
         x /= 10
         z -= 1
