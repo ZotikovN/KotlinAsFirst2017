@@ -129,12 +129,8 @@ fun minDivisor(n: Int): Int {
  * Для заданного числа n > 1 найти максимальный делитель, меньший n
  */
 fun maxDivisor(n: Int): Int {
-    var k=0
-   for (i in n/2 downTo 1) {
-       k=i
-       if (n%k==0) return k
-   }
-    return 1
+    val k = n / minDivisor(n)
+    return k
 }
 
 /**
@@ -145,11 +141,29 @@ fun maxDivisor(n: Int): Int {
  * Например, 25 и 49 взаимно простые, а 6 и 8 -- нет.
  */
 fun isCoPrime(m: Int, n: Int): Boolean {
-    for (i in 2..Math.max(m,n)) {
-        if ((m%i==0)&&(n%i==0)) return false
+    val result = AlgEu(m, n)
+    when (result == 1) {
+        true -> return true
+        false -> return false
     }
-    return true
 }
+
+fun AlgEu(y: Int, x: Int): Int {
+    var DivMax = 0
+    var m = y
+    var n = x
+    do {
+        when ((Math.max(m, n) % Math.min(m, n)) == 0 ) {
+            true -> DivMax = Math.min(m, n)
+            false -> when (n < m) {
+                true -> m %= n
+                false -> n %= m
+            }
+        }
+    } while (DivMax == 0)
+    return DivMax
+}
+
 /**
  * Простая
  *
