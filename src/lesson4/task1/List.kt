@@ -278,16 +278,16 @@ fun decimalFromString(str: String, base: Int): Int {
  */
 fun roman(n: Int): String {
     var n1 = n
-    var str = ""
+    var str = StringBuilder("")
     val rom = listOf("M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I")
     val arb = listOf(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
     for (i in 0 until arb.size) {
         while (arb[i]<=n1) {
             n1 -= arb[i]
-            str += rom[i]
+            str.append(rom[i])
         }
     }
-    return str
+    return str.toString()
 }
 
 /**
