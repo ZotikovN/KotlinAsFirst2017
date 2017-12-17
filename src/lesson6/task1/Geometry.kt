@@ -185,9 +185,9 @@ fun lineBySegment(s: Segment): Line =
 
 fun Ang(m: Double): Double {
     var ang = m
-    when (ang < 0) {
-        true -> ang = ang + Math.PI
-        false -> ang = ang - Math.PI
+    when {
+        ang < 0 -> ang = ang + Math.PI
+        ang >= Math.PI -> ang = ang - Math.PI
     }
     return ang
 }
