@@ -140,15 +140,9 @@ fun maxDivisor(n: Int): Int {
  * Взаимно простые числа не имеют общих делителей, кроме 1.
  * Например, 25 и 49 взаимно простые, а 6 и 8 -- нет.
  */
-fun isCoPrime(m: Int, n: Int): Boolean {
-    val result = AlgEu(m, n)
-    when (result == 1) {
-        true -> return true
-        false -> return false
-    }
-}
+fun isCoPrime(m: Int, n: Int): Boolean = algEu(m, n) == 1
 
-fun AlgEu(y: Int, x: Int): Int {
+fun algEu(y: Int, x: Int): Int {
     var DivMax = 0
     var m = y
     var n = x
