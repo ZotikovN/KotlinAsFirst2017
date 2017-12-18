@@ -101,17 +101,7 @@ fun fib(n: Int): Int {
  * Для заданных чисел m и n найти наименьшее общее кратное, то есть,
  * минимальное число k, которое делится и на m и на n без остатка
  */
-fun lcm(m: Int, n: Int): Int {
-    var nk = n
-    var mk = m
-    while (nk!=mk) {
-        when {
-            nk<mk -> mk-=nk
-            else -> nk-=mk
-        }
-    }
-    return (m/mk)*n
-}
+fun lcm(m: Int, n: Int): Int = n / m * algEu(m, n)
 /**
  * Простая
  *
