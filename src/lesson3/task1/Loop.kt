@@ -108,9 +108,15 @@ fun lcm(m: Int, n: Int): Int = m * n / algEu(m, n)
  * Для заданного числа n > 1 найти минимальный делитель, превышающий 1
  */
 fun minDivisor(n: Int): Int {
+    val n1: Double = Math.ceil(Math.sqrt(n.toDouble()))
     var k=2
-    while (n % k > 0) k+=1
-    return k
+    do {
+        when (n % k == 0) {
+            true -> return k
+        }
+        k+=1
+    } while (k <= n1)
+    return n
 }
 
 /**
