@@ -167,8 +167,7 @@ fun squareBetweenExists(m: Int, n: Int): Boolean {
         true -> return true
         false -> {
             while (k<=n/k) {
-                if ((k.toDouble()>=m.toDouble()/k.toDouble()) &&
-                        (k.toDouble()<=n.toDouble()/k.toDouble())) return true
+                if (k.toDouble()>=m.toDouble()/k.toDouble()) return true
                 k+=1
             }
         }
